@@ -5,6 +5,7 @@ import Loader from "../components/Loader";
 import Search from "../components/Search";
 import classes from '../styles/Home.module.css'
 import Error from "../components/Error";
+import Head from 'next/head'
 
 export const App = () => {
   const [fetchCity, setFetchCity] = useState("Kiev")
@@ -27,6 +28,10 @@ export const App = () => {
   },[triggerMetrics]);
   return getWeather && !getWeather.message ?(
     <div className={classes.main}>
+    <Head>
+      <title>Weather-app</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+    </Head>
       <TempCard 
         city={getWeather.name}
         country={getWeather.sys.country}
