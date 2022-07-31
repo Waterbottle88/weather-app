@@ -28,10 +28,11 @@ export const App = () => {
   },[triggerMetrics]);
   return getWeather && !getWeather.message ?(
     <div className={classes.main}>
-    <Head>
-      <title>Weather-app</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1" />
-    </Head>
+      <Head>
+        <title>Weather-app</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </Head>
+      
       <TempCard 
         city={getWeather.name}
         country={getWeather.sys.country}
@@ -39,32 +40,33 @@ export const App = () => {
         temp={getWeather.main.temp}
         feels_like={getWeather.main.feels_like}
         icon={getWeather.weather[0].icon}
-        />
-        <Search
-          value={fetchCity} 
-          onFocus={(e) => {
-            e.target.value = ""
-          }}
-          onChange={(e) => setFetchCity(e.target.value)}
-          onKeyDown={(e) => {
-            e.keyCode === 13 && setTriggerMetrics(!triggerMetrics);
-          }}
-        />
+      />
+
+      <Search
+        value={fetchCity} 
+        onFocus={(e) => {
+          e.target.value = ""
+        }}
+        onChange={(e) => setFetchCity(e.target.value)}
+        onKeyDown={(e) => {
+          e.keyCode === 13 && setTriggerMetrics(!triggerMetrics);
+        }}
+      />
     </div>
   ) : getWeather && getWeather.message ?(
   <Error> 
     <Search
-          value={fetchCity} 
-          onFocus={(e) => {
-            e.target.value = ""
-          }}
-          onChange={(e) => setFetchCity(e.target.value)}
-          onKeyDown={(e) => {
-            e.keyCode === 13 && setTriggerMetrics(!triggerMetrics);
-          }}
-          />
-  </Error>)
-  : (<Loader/>)
+        value={fetchCity} 
+        onFocus={(e) => {
+          e.target.value = ""
+        }}
+        onChange={(e) => setFetchCity(e.target.value)}
+        onKeyDown={(e) => {
+          e.keyCode === 13 && setTriggerMetrics(!triggerMetrics);
+        }}
+    />
+  </Error>
+  ) : (<Loader/>)
 }
 
 export default App;

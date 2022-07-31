@@ -1,4 +1,6 @@
 .card {
+    display: flex;
+    flex-direction: column;
     padding: 30px 30px 30px;
     text-align: center;
     background-color: white;
@@ -12,8 +14,4 @@
 
 .temp {
     font-size: 30px;
-}
-
-.img {
-    object-fit: cover;
 }

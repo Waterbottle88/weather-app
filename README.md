@@ -27,5 +27,5 @@ Link - https://weather-app-waterbottle88.vercel.app/
 5. Login to [OpenWeatherMap](https://openweathermap.org/api)
 6. create .env
 7. Add KEY={TOKEN} in .env
-8. `npm next dev`
+8. `npm run dev`
 9. Open https://localhost:3000 in your browser
